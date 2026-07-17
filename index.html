@@ -271,6 +271,155 @@
     .step__desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; }
     .step__code { margin-top: var(--space-3); background: var(--color-surface-2); border: 1px solid oklch(from var(--color-text) l c h / 0.1); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); font-family: 'Courier New', monospace; font-size: var(--text-xs); color: var(--color-primary); overflow-x: auto; }
 
+    /* === TEAM & AUTHOR SECTIONS === */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+      gap: var(--space-6);
+    }
+    .team-role-card {
+      background: var(--color-surface);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.09);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      box-shadow: var(--shadow-sm);
+    }
+    .team-role-card__header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding-bottom: var(--space-3);
+      border-bottom: 1px solid oklch(from var(--color-text) l c h / 0.08);
+    }
+    .team-role-card__icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-lg);
+      background: color-mix(in oklch, var(--color-primary) 12%, var(--color-surface-offset));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+    .team-role-card__title {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .team-member-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+    .team-member {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .team-member__name {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-text);
+    }
+    .team-member__email {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      text-decoration: none;
+    }
+    .team-member__email:hover {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+
+    .author-card {
+      background: color-mix(in oklch, var(--color-primary) 5%, var(--color-surface));
+      border: 1px solid color-mix(in oklch, var(--color-primary) 22%, transparent);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      box-shadow: var(--shadow-md);
+    }
+    .author-card__header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    .author-card__avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-full);
+      background: color-mix(in oklch, var(--color-primary) 20%, var(--color-surface-offset));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .author-card__name {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .author-card__email {
+      font-size: var(--text-sm);
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .author-card__email:hover {
+      text-decoration: underline;
+    }
+    .author-card__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+    .author-link-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-2) var(--space-3);
+      background: var(--color-surface-2);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.12);
+      border-radius: var(--radius-md);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+    .author-link-badge:hover {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+    .author-card__affiliation {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      border-top: 1px solid oklch(from var(--color-text) l c h / 0.08);
+      padding-top: var(--space-4);
+    }
+    .author-card__affiliation a {
+      color: var(--color-text);
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    .author-card__affiliation a:hover {
+      color: var(--color-primary);
+    }
+
     /* === FOOTER === */
     .footer {
       border-top: 1px solid oklch(from var(--color-text) l c h / 0.07);
@@ -313,6 +462,8 @@
           <a href="#repositorios">Repositórios</a>
           <a href="#sobre">Sobre</a>
           <a href="#instalacao">Instalação</a>
+          <a href="#equipe">Equipe</a>
+          <a href="#autoria">Autoria</a>
         </nav>
         <div class="nav__actions">
           <button class="btn-theme" data-theme-toggle aria-label="Alternar tema">
@@ -597,6 +748,135 @@
     </div>
   </section>
 
+  <!-- EQUIPE -->
+  <section class="section" id="equipe">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__tag">Equipe</p>
+        <h2 class="section__title">Equipe de Desenvolvimento da Suite</h2>
+        <p class="section__desc">Pessoas que participaram da construção, liderança e manutenção da SUAP Moodle Theme Suite, agrupadas por papel.</p>
+      </div>
+
+      <div class="team-grid">
+        <!-- Tech Leader & Developer -->
+        <div class="team-role-card">
+          <div class="team-role-card__header">
+            <div class="team-role-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="team-role-card__title">Tech Leader & Developer</h3>
+          </div>
+          <ul class="team-member-list">
+            <li class="team-member">
+              <span class="team-member__name">Kelson da Costa Medeiros</span>
+              <a href="mailto:kelsoncm@gmail.com" class="team-member__email">kelsoncm@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Developer -->
+        <div class="team-role-card">
+          <div class="team-role-card__header">
+            <div class="team-role-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="team-role-card__title">Developer</h3>
+          </div>
+          <ul class="team-member-list">
+            <li class="team-member">
+              <span class="team-member__name">Ana Carolina Targino Praxedes</span>
+              <a href="mailto:anacarolinapraxedes47@gmail.com" class="team-member__email">anacarolinapraxedes47@gmail.com</a>
+            </li>
+            <li class="team-member">
+              <span class="team-member__name">Daniel Berg Lopes Campelo de Morais</span>
+              <a href="mailto:danielbergmorais@gmail.com" class="team-member__email">danielbergmorais@gmail.com</a>
+            </li>
+            <li class="team-member">
+              <span class="team-member__name">Hilquias Abias Figueiredo Silva</span>
+              <a href="mailto:hilquias.dev@gmail.com" class="team-member__email">hilquias.dev@gmail.com</a>
+            </li>
+            <li class="team-member">
+              <span class="team-member__name">Matheus Mathias Rocha Lúcio de Moraes</span>
+              <a href="mailto:mathias.matheus76@gmail.com" class="team-member__email">mathias.matheus76@gmail.com</a>
+            </li>
+            <li class="team-member">
+              <span class="team-member__name">Victor Oliveira</span>
+              <a href="mailto:jvti.profissional@gmail.com" class="team-member__email">jvti.profissional@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Operator -->
+        <div class="team-role-card">
+          <div class="team-role-card__header">
+            <div class="team-role-card__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <h3 class="team-role-card__title">Operator</h3>
+          </div>
+          <ul class="team-member-list">
+            <li class="team-member">
+              <span class="team-member__name">Daniel Alves do Nascimento</span>
+              <a href="mailto:dxnielalves@gmail.com" class="team-member__email">dxnielalves@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTORIA -->
+  <section class="section" id="autoria" style="background: var(--color-surface); border-top: 1px solid oklch(from var(--color-text) l c h / 0.07);">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__tag">Autoria</p>
+        <h2 class="section__title">Autoria da Documentação (Pages)</h2>
+        <p class="section__desc">Pessoa responsável pela escrita e manutenção da documentação e deste portal (pages).</p>
+      </div>
+
+      <div class="author-card">
+        <div class="author-card__header">
+          <div class="author-card__avatar">KM</div>
+          <div>
+            <h3 class="author-card__name">Kelson da Costa Medeiros</h3>
+            <a href="mailto:kelson.medeiros@ifrn.edu.br" class="author-card__email">kelson.medeiros@ifrn.edu.br</a>
+          </div>
+        </div>
+
+        <div class="author-card__links">
+          <a href="https://linkedin.com/in/kelsoncm" target="_blank" rel="noopener noreferrer" class="author-link-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/kelsoncm" target="_blank" rel="noopener noreferrer" class="author-link-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            GitHub
+          </a>
+          <a href="https://orcid.org/0000-0001-6749-4656" target="_blank" rel="noopener noreferrer" class="author-link-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+            ORCID
+          </a>
+          <a href="https://loop.frontiersin.org/people/1858110/overview" target="_blank" rel="noopener noreferrer" class="author-link-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 12h6"/></svg>
+            Loop
+          </a>
+          <a href="http://lattes.cnpq.br/1734494254835148" target="_blank" rel="noopener noreferrer" class="author-link-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Lattes
+          </a>
+          <a href="https://independent.academia.edu/kelsoncm" target="_blank" rel="noopener noreferrer" class="author-link-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+            Academia
+          </a>
+        </div>
+
+        <div class="author-card__affiliation">
+          <a href="https://ead.ifrn.edu.br/" target="_blank" rel="noopener noreferrer">Campus Natal-Zona Leste (ZL)</a> do <a href="https://portal.ifrn.edu.br/" target="_blank" rel="noopener noreferrer">Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte (IFRN)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container--wide">
@@ -613,7 +893,8 @@
         <nav class="footer__links" aria-label="Links do rodapé">
           <a href="https://github.com/suap-moodletheme-suite" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://github.com/orgs/suap-moodletheme-suite/repositories" target="_blank" rel="noopener noreferrer">Repositórios</a>
-          <a href="https://github.com/suap-moodletheme-suite/moodle-theme_suap/issues" target="_blank" rel="noopener noreferrer">Issues</a>
+          <a href="#equipe">Equipe</a>
+          <a href="#autoria">Autoria</a>
         </nav>
         <span class="footer__copy">IFRN · Licença GPL-3.0</span>
       </div>
@@ -657,7 +938,7 @@
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('.repo-card, .step, .about__visual-row').forEach(el => {
+    document.querySelectorAll('.repo-card, .step, .about__visual-row, .team-role-card, .author-card').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(16px)';
       el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
