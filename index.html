@@ -511,45 +511,88 @@
   <!-- INSTALAÇÃO -->
   <section class="section" id="instalacao">
     <div class="container">
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-12); align-items:start;">
-        <div style="max-width:600px">
-          <p class="section__tag">Instalação</p>
-          <h2 class="section__title">Como instalar</h2>
-          <p class="section__desc">Instalação via git direto nos diretórios do Moodle, seguindo a convenção de nomenclatura de plugins.</p>
-        </div>
-        <div></div>
+      <div style="max-width:600px; margin-bottom:var(--space-8);">
+        <p class="section__tag">Instalação</p>
+        <h2 class="section__title">Como instalar</h2>
+        <p class="section__desc">Os componentes da suíte seguem o padrão nativo de plugins do Moodle e podem ser instalados facilmente via interface web ou extração manual no servidor.</p>
       </div>
-      <div class="steps" style="margin-top:var(--space-8); max-width:640px;">
-        <div class="step">
-          <div class="step__num">1</div>
-          <div class="step__body">
-            <div class="step__title">Clone o tema principal</div>
-            <div class="step__desc">No diretório <code>theme/</code> da sua instalação Moodle:</div>
-            <div class="step__code">git clone https://github.com/suap-moodletheme-suite/moodle-theme_suap.git theme/suap</div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:var(--space-8); align-items:start;">
+
+        <!-- Opção 1 -->
+        <div style="background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius-xl); padding:var(--space-6);">
+          <div style="display:flex; align-items:center; gap:var(--space-3); margin-bottom:var(--space-6);">
+            <div style="width:36px; height:36px; border-radius:var(--radius-full); background:color-mix(in oklch, var(--color-primary) 15%, var(--color-surface-offset)); display:flex; align-items:center; justify-content:center; color:var(--color-primary); font-weight:800;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            <div>
+              <h3 style="font-family:var(--font-display); font-size:var(--text-lg); font-weight:700; color:var(--color-text); margin:0;">Via Interface Web (ZIP)</h3>
+              <span style="font-size:var(--text-xs); color:var(--color-primary); font-weight:600;">Recomendado para Administradores</span>
+            </div>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step__num">1</div>
+              <div class="step__body">
+                <div class="step__title">Baixe o ZIP da Release</div>
+                <div class="step__desc">Acesse a aba <strong>Releases</strong> no repositório do plugin/tema desejado e baixe o arquivo <code>.zip</code> mais recente.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step__num">2</div>
+              <div class="step__body">
+                <div class="step__title">Upload no Moodle</div>
+                <div class="step__desc">Acesse <em>Administração do site → Plugins → Instalar plugins</em> e envie o arquivo <code>.zip</code>.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step__num">3</div>
+              <div class="step__body">
+                <div class="step__title">Conclua a Instalação</div>
+                <div class="step__desc">Siga as instruções em tela e execute as atualizações de banco de dados do Moodle.</div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="step">
-          <div class="step__num">2</div>
-          <div class="step__body">
-            <div class="step__title">Adicione os blocos desejados</div>
-            <div class="step__desc">No diretório <code>blocks/</code>:</div>
-            <div class="step__code">git clone https://github.com/suap-moodletheme-suite/moodle-block_course_gallery.git blocks/course_gallery</div>
+
+        <!-- Opção 2 -->
+        <div style="background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius-xl); padding:var(--space-6);">
+          <div style="display:flex; align-items:center; gap:var(--space-3); margin-bottom:var(--space-6);">
+            <div style="width:36px; height:36px; border-radius:var(--radius-full); background:color-mix(in oklch, var(--color-primary) 15%, var(--color-surface-offset)); display:flex; align-items:center; justify-content:center; color:var(--color-primary); font-weight:800;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div>
+              <h3 style="font-family:var(--font-display); font-size:var(--text-lg); font-weight:700; color:var(--color-text); margin:0;">Manual no Servidor (ZIP)</h3>
+              <span style="font-size:var(--text-xs); color:var(--color-text-muted);">Extração em diretório</span>
+            </div>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step__num">1</div>
+              <div class="step__body">
+                <div class="step__title">Extraia o Tema</div>
+                <div class="step__desc">Baixe a Release e extraia o conteúdo na pasta <code>theme/suap</code>.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step__num">2</div>
+              <div class="step__body">
+                <div class="step__title">Extraia os Blocos</div>
+                <div class="step__desc">Extraia os blocos desejados na pasta <code>blocks/&lt;nome_do_bloco&gt;</code> (ex: <code>blocks/course_gallery</code>).</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step__num">3</div>
+              <div class="step__body">
+                <div class="step__title">Notificações e Ativação</div>
+                <div class="step__desc">Acesse <em>Administração do site → Notificações</em> para atualizar o banco de dados e ative em <em>Aparência → Temas</em>.</div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="step">
-          <div class="step__num">3</div>
-          <div class="step__body">
-            <div class="step__title">Execute as atualizações de banco</div>
-            <div class="step__desc">Acesse o painel de administração do Moodle e clique em <em>Notificações</em> para que os plugins sejam instalados automaticamente.</div>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step__num">4</div>
-          <div class="step__body">
-            <div class="step__title">Ative o tema SUAP</div>
-            <div class="step__desc">Em <em>Administração do site → Aparência → Temas</em>, selecione o tema SUAP como padrão.</div>
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
