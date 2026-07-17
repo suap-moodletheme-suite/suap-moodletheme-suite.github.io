@@ -1,2 +1,1 @@
-# suap-moodletheme-suite.github.io
-Landing page e documentação da SUAP Moodle Theme Suite
+# [Documentação Oficial e Portal da Suíte](https://suap-moodletheme-suite.github.io/)
